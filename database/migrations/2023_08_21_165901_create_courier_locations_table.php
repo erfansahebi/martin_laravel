@@ -10,11 +10,11 @@ return new class extends Migration {
      */
     public function up (): void
     {
-        Schema::create( 'users', function ( Blueprint $table ) {
+        Schema::create( 'courier_locations', function ( Blueprint $table ) {
             $table->id();
-            $table->string( 'name' );
-            $table->string( 'phone_number', 20 )->unique();
-            $table->string( 'password' );
+            $table->float( 'lat', 10, 7 );
+            $table->float( 'long', 10, 7 );
+            $table->foreignId( 'courier_user_id' )->constrained( 'users' )->onUpdate( 'cascade' )->onDelete( 'cascade' );
             $table->timestamps();
             $table->softDeletes();
         } );
@@ -25,6 +25,6 @@ return new class extends Migration {
      */
     public function down (): void
     {
-        Schema::dropIfExists( 'users' );
+        Schema::dropIfExists( 'courier_locations' );
     }
 };
