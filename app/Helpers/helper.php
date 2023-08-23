@@ -107,3 +107,25 @@ if ( ! function_exists( 'convert_int_to_english' ) )
         return str_replace( $persian, $newNumbers, $string );
     }
 }
+
+if ( ! function_exists( 'normalize_location_lat' ) )
+{
+    function normalize_location_lat ( float $lat ): string|null
+    {
+        if ( $lat < - 90 || $lat > 90 )
+            return null;
+
+        return number_format( num: $lat, decimals: 7 );
+    }
+}
+
+if ( ! function_exists( 'normalize_location_long' ) )
+{
+    function normalize_location_long ( float $long ): string|null
+    {
+        if ( $long < - 180 || $long > 180 )
+            return null;
+
+        return number_format( num: $long, decimals: 7 );
+    }
+}

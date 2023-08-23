@@ -2,6 +2,8 @@
 
 namespace App\Observers;
 
+use App\Enums\OrderStatusEnum;
+use App\Events\LocationChanged;
 use App\Models\Order;
 
 class OrderObserver
@@ -22,7 +24,12 @@ class OrderObserver
      */
     public function updated ( Order $order ): void
     {
-        //
+        if ( $order->isDirty( [ 'status' ] ) && in_array( needle: $order->status, haystack: [
+                OrderStatusEnum::AcceptedAndOnTheWayToTheOrigin->value,
+                OrderStatusEnum::OnTheWayToTheDestination->value,
+                OrderStatusEnum::Done->value,
+            ] ) )
+            LocationChanged::dispatch( $order->id, $order->corporate->web_hook_address, $order->courierLocation, $order->status );
     }
 
     /**

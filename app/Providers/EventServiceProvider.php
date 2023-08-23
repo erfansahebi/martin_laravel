@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\LocationChanged;
+use App\Listeners\SendLocationNotification;
 use App\Models\CourierLocation;
 use App\Models\Order;
 use App\Observers\CourierLocationObserver;
@@ -16,7 +18,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-
+        LocationChanged::class => [
+            SendLocationNotification::class,
+        ],
     ];
 
     /**

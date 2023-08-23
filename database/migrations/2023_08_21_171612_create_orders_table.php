@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\OrderStatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -26,9 +27,9 @@ return new class extends Migration {
             $table->string( 'receiver_phone_number', 20 );
 
             $table->foreignId( 'corporate_id' )->constrained( 'corporates' )->onUpdate( 'cascade' )->onDelete( 'cascade' );
-            $table->foreignId( 'courier_user_id' )->constrained( 'users' )->onUpdate( 'cascade' )->onDelete( 'cascade' );
+            $table->foreignId( 'courier_user_id' )->nullable()->constrained( 'users' )->onUpdate( 'cascade' )->onDelete( 'cascade' );
 
-            $table->tinyInteger( 'status' )->default( \App\Models\Order::STATUS[ 'pending' ] );
+            $table->tinyInteger( 'status' )->default( OrderStatusEnum::Pending->value );
 
             $table->timestamps();
             $table->softDeletes();
