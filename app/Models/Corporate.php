@@ -17,9 +17,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Order> $Orders
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Order> $orders
  * @property-read int|null $orders_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\User> $Users
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\User> $users
  * @property-read int|null $users_count
  * @method static \Database\Factories\CorporateFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Corporate newModelQuery()
@@ -45,12 +45,12 @@ class Corporate extends Model
         'web_hook_address',
     ];
 
-    public function Orders (): HasMany
+    public function orders (): HasMany
     {
         return $this->hasMany( related: Order::class, foreignKey: 'corporate_id', localKey: 'id' );
     }
 
-    public function Users (): BelongsToMany
+    public function users (): BelongsToMany
     {
         return $this->belongsToMany( related: User::class, table: 'corporate_user', foreignPivotKey: 'corporate_id', relatedPivotKey: 'user_id', parentKey: 'id', relatedKey: 'id' )->wherePivotNull( 'deleted_at' );
     }

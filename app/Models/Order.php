@@ -28,8 +28,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property-read \App\Models\Corporate $Corporate
- * @property-read \App\Models\User $Courier
+ * @property-read \App\Models\Corporate $corporate
+ * @property-read \App\Models\User $courier
+ * @property-read \App\Models\CourierLocation $courierLocation
  * @method static \Illuminate\Database\Eloquent\Builder|Order newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Order newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Order onlyTrashed()
@@ -59,14 +60,6 @@ class Order extends Model
 {
     use HasFactory, SoftDeletes, HasUuids;
 
-    const STATUS = [
-        'canceled'                              => 0,
-        'accepted_and_on_the_way_to_the_origin' => 1,
-        'on_the_way_to_the_destination'         => 2,
-        'done'                                  => 3,
-        'pending'                               => 4,
-    ];
-
     protected $fillable = [
         'origin_lat',
         'origin_long',
@@ -90,14 +83,19 @@ class Order extends Model
         'destination_long' => 'float',
     ];
 
-    public function Corporate (): BelongsTo
+    public function corporate (): BelongsTo
     {
         return $this->belongsTo( related: Corporate::class, foreignKey: 'corporate_id', ownerKey: 'id' );
     }
 
-    public function Courier (): BelongsTo
+    public function courier (): BelongsTo
     {
         return $this->belongsTo( related: User::class, foreignKey: 'courier_user_id', ownerKey: 'id' );
+    }
+
+    public function courierLocation (): BelongsTo
+    {
+        return $this->belongsTo( related: CourierLocation::class, foreignKey: 'courier_user_id', ownerKey: 'courier_user_id' );
     }
 
 }

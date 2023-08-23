@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property-read \App\Models\User $Courier
+ * @property-read \App\Models\User $courier
  * @method static \Illuminate\Database\Eloquent\Builder|CourierLocation newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CourierLocation newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CourierLocation onlyTrashed()
@@ -48,7 +48,7 @@ class CourierLocation extends Model
         'long' => 'float',
     ];
 
-    public function Courier (): BelongsTo
+    public function courier (): BelongsTo
     {
         return $this->belongsTo( related: User::class, foreignKey: 'courier_user_id', ownerKey: 'id' );
     }
