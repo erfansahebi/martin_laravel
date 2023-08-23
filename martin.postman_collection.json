@@ -1,0 +1,1726 @@
+{
+	"info": {
+		"_postman_id": "2690b55d-9855-43b4-b2e1-c391eaec573a",
+		"name": "martin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25136237"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"phone_number\": \"{{courier_phone_number}}\",\n    \"phone_number\": \"{{employee_phone_number}}\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Employee",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"phone_number\": \"{{courier_phone_number}}\",\n    \"phone_number\": \"{{employee_phone_number}}\",\n    \"password\": \"123456789\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 01:32:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 01:32:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Erfan Sahebi Employee\",\n            \"role\": \"employee\",\n            \"corporates\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                }\n            ]\n        },\n        \"token\": {\n            \"accessToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODRkMTliMTdiZDdkMmE1Zjc4MGFhZTAzZDI5MTM5ZTY0MDEyNmY3NjRlOGI5YTY2Mzk5NDI3NGRhNDA0ZjlmYjMxYjQ3NTI5YTcwOWUyMGEiLCJpYXQiOjE2OTI2Njc5NzEuMjcxNTczLCJuYmYiOjE2OTI2Njc5NzEuMjcxNTc2LCJleHAiOjE3MDg1NjU1NzEuMjY5NjgyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.myF31dQ_T3iDPSGzGuCsZBI9FfQNTLX5SC8w3IkPjN1aqtxxJhyXhyjzQYG17l7sQVstHNdq3ifJMgqbRTg_tmIaK7VxARS6t8qIYP6oy9NfFCUgur3c3UyMk9Nvltf0KP2CAZwHar9WZnGWxqE36zCZ7Ln-IS2VetTEwTK6KMCvjx3dpUCzp5vtmcuBL-7tayfSBbRORdlQsCd-ZvU_yLRZX5X69J3Dv7qWsOx8mYqFKIj_jrGsbklmSSLXhRptIhZvgwh-JV-9MWsBLXKHrea2AQ5adTuWTt4G7D992P7euRjamKQLQguszClV00y7-K1skZgpo3Nv-O-34cock-Bywrz9SHACDunTDWD6dv1rAt1eP2maNkooxY7dzlJhXCsLZsXpoU_CIZkTP2_GywLVr61O6NYsRQgRbbTKD1oFbhogrGEeYh9m9bm7a1ZELQkB0iihHMTF-7xPGAbvqszskR-BtcrfsOrkxoVQhFSzxc8UkS_MwEGJxj6JKQOR1X3BKwnYG86XUlTGM-RDipB0GEqvSnH1qm3b3dKbKv6DWdME3f-xn76uAKQzAdRORzvsIvBgChqJ7Zn4D_kbFb23vnf--80wWY3WNL1p9YIE3X_BNhHaMFZt3p_VXgRmy4vHTCBAEqSshfzJwxXZ5vGTpYfJryjMHpdqunOwQSE\",\n            \"expires_at\": \"2024-02-22T01:32:51.000000Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Success Courier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone_number\": \"{{courier_phone_number}}\",\n    // \"phone_number\": \"{{employee_phone_number}}\",\n    \"password\": \"123456789\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 01:33:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 01:33:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Erfan Sahebi Courier\",\n            \"role\": \"courier\",\n            \"location\": {\n                \"lat\": 35.5501,\n                \"long\": 51.515,\n                \"updated_at\": \"2023-08-21T20:38:39.000000Z\"\n            }\n        },\n        \"token\": {\n            \"accessToken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTkzNmE1MDIzZDNkMDQzNWNjODYzMDcyMDA4YzJlNzU2OGJhMzBmZjFmMjc0YzRhMTA2NjRmODIxNjFjZGI1NjE5YjdlZDkxNDY5ODQzZTEiLCJpYXQiOjE2OTI2NjgwMjIuMDcxMjg0LCJuYmYiOjE2OTI2NjgwMjIuMDcxMjg2LCJleHAiOjE3MDg1NjU2MjIuMDY5ODc1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.kzBxssXzLtsA0Y2w4dP_p2wGQoXgj65FtdfRfy554lUTZ8IBZB6nyrJTt-RoBia2DJ4w1fZ0pleGXtWGbk4Wxc4M9ZT5tq0dAM3xuACTGtO5Iz7lCNlKOZ1XF1556QG37OhMYKwGDzHHvJLELr2xFPAtZGemOhAUC4qlMppCZH0iktYLPexnRsCVxlzUqfrJQTaTB7UHK9f2lVJ_-itmiQ0xsZcaOGGARVCDF05jcRdU2y6f48vGhcaRz0I6OwEnNzZ_46k_ClZKmSZgzimwxtKTdEQr4Jk9dtV3net5PI6pgTUm31t2pH2fhF8di-sFWrz2oEvK5a3AiqIZmOIPIBh9p_T5jZGhLilXLeFNSRBWFKtyKyyo_wMkvSmE0Qbdh4dfbFnUGrJ0qo5mCEwuvvjF4w3fYV5bTtANVr-YBbM_zUFbxkYUXs7xd27UkjqXM_PtEF2Pg5i-3zq6cS7sQE5FTdWsKd-BkUivh28uNN18CnjPHgeqNzxTUPWSNR4UEeBFhM226i3R75XO6gCRZ_VDHBB-KSirdteBbE5uitWu3zbaG5Mqn4SMNSlVnBjbVqWFmPAINC2yiqAN8-M-tHmOxifNoPxC3WFVjrmSevdaiBDFPyNvt_F7qeAMvEbqpIbYIe1puIQlGdN4RAxS7PW8Ixafgmt9sx0DEIG7l9I\",\n            \"expires_at\": \"2024-02-22T01:33:42.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/auth/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/auth/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 00:28:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 00:28:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": []\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Index User Orders",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/users/orders",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"orders"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Courier Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/users/orders",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"orders"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 22 Aug 2023 15:16:41 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 22 Aug 2023 15:16:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"orders\": [\n            {\n                \"id\": \"2ef8d0c8-88e9-4d01-852f-b795bad8c04f\",\n                \"origin\": {\n                    \"origin_lat\": 13.25,\n                    \"origin_long\": -150.5,\n                    \"origin_address\": \"origin address\",\n                    \"provider_name\": \"provider name\",\n                    \"provider_phone_number\": \"+989122244567\"\n                },\n                \"destination\": {\n                    \"destination_lat\": -56.123456,\n                    \"destination_long\": 12.00005,\n                    \"destination_address\": \"destination address\",\n                    \"receiver_name\": \"receiver name\",\n                    \"receiver_phone_number\": \"+989457812456\"\n                },\n                \"status\": 1,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": {\n                    \"id\": 2,\n                    \"name\": \"Erfan Sahebi Courier\",\n                    \"role\": \"courier\",\n                    \"location\": {\n                        \"lat\": 62.00001,\n                        \"long\": -50.6541,\n                        \"updated_at\": \"2023-08-22T15:09:32.000000Z\"\n                    }\n                }\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "Employee Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/users/orders",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"orders"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 22 Aug 2023 17:17:00 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 22 Aug 2023 17:17:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"orders\": [\n            {\n                \"id\": \"2ef8d0c8-88e9-4d01-852f-b795bad8c04f\",\n                \"origin\": {\n                    \"origin_lat\": 13.25,\n                    \"origin_long\": -150.5,\n                    \"origin_address\": \"origin address\",\n                    \"provider_name\": \"provider name\",\n                    \"provider_phone_number\": \"+989122244567\"\n                },\n                \"destination\": {\n                    \"destination_lat\": -56.123456,\n                    \"destination_long\": 12.00005,\n                    \"destination_address\": \"destination address\",\n                    \"receiver_name\": \"receiver name\",\n                    \"receiver_phone_number\": \"+989457812456\"\n                },\n                \"status\": 1,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": {\n                    \"id\": 2,\n                    \"name\": \"Erfan Sahebi Courier\",\n                    \"role\": \"courier\",\n                    \"location\": {\n                        \"lat\": 62.00001,\n                        \"long\": -50.6541,\n                        \"updated_at\": \"2023-08-22T15:09:32.000000Z\"\n                    }\n                }\n            },\n            {\n                \"id\": \"99f3c294-f2c7-4175-9a6b-1e2d032005ae\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": null\n            },\n            {\n                \"id\": \"99f3c4d7-3b43-4bb1-9636-4eab0bedb15e\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": null\n            },\n            {\n                \"id\": \"99f3c558-40cc-4186-958d-6dbd82833f6f\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": null\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Employee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 01:28:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 01:28:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Erfan Sahebi Employee\",\n            \"role\": \"employee\",\n            \"corporates\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                }\n            ]\n        }\n    }\n}"
+						},
+						{
+							"name": "Success Courier",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 01:34:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 01:34:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Erfan Sahebi Courier\",\n            \"role\": \"courier\",\n            \"location\": {\n                \"lat\": 35.5501,\n                \"long\": 51.515,\n                \"updated_at\": \"2023-08-21T20:38:39.000000Z\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Location",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lat\": 62.00001,\n    \"long\": -50.65410\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"lat\": 62.00001,\n    \"long\": -50.65410\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 15:09:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 15:09:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Store",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporate_id\": 1,\n    \"origin_lat\": 56.231,\n    \"origin_long\": -53.56,\n    \"origin_address\": \"origin address test\",\n    \"provider_name\": \"provider name test\",\n    \"provider_phone_number\": \"09354679852\",\n    \"destination_lat\": 12.005,\n    \"destination_long\": -12.00005,\n    \"destination_address\": \"destination address test\",\n    \"receiver_name\": \"receiver name test\",\n    \"receiver_phone_number\": \"09124679258\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"corporate_id\": 1,\n    \"origin_lat\": 56.231,\n    \"origin_long\": -53.56,\n    \"origin_address\": \"origin address test\",\n    \"provider_name\": \"provider name test\",\n    \"provider_phone_number\": \"09354679852\",\n    \"destination_lat\": 12.005,\n    \"destination_long\": -12.00005,\n    \"destination_address\": \"destination address test\",\n    \"receiver_name\": \"receiver name test\",\n    \"receiver_phone_number\": \"09124679258\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/orders",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 16:44:29 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 16:44:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"order\": {\n            \"id\": \"99f3c558-40cc-4186-958d-6dbd82833f6f\",\n            \"origin\": {\n                \"origin_lat\": 56.231,\n                \"origin_long\": -53.56,\n                \"origin_address\": \"origin address test\",\n                \"provider_name\": \"provider name test\",\n                \"provider_phone_number\": \"+989354679852\"\n            },\n            \"destination\": {\n                \"destination_lat\": 12.005,\n                \"destination_long\": -12.00005,\n                \"destination_address\": \"destination address test\",\n                \"receiver_name\": \"receiver name test\",\n                \"receiver_phone_number\": \"+989124679258\"\n            },\n            \"status\": 4,\n            \"corporate\": {\n                \"id\": 1,\n                \"name\": \"Sample Company\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Employee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/orders",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 19:53:58 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 19:53:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"orders\": [\n            {\n                \"id\": \"2ef8d0c8-88e9-4d01-852f-b795bad8c04f\",\n                \"origin\": {\n                    \"origin_lat\": 13.25,\n                    \"origin_long\": -150.5,\n                    \"origin_address\": \"origin address\",\n                    \"provider_name\": \"provider name\",\n                    \"provider_phone_number\": \"+989122244567\"\n                },\n                \"destination\": {\n                    \"destination_lat\": -56.123456,\n                    \"destination_long\": 12.00005,\n                    \"destination_address\": \"destination address\",\n                    \"receiver_name\": \"receiver name\",\n                    \"receiver_phone_number\": \"+989457812456\"\n                },\n                \"status\": 1,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": {\n                    \"id\": 2,\n                    \"name\": \"Erfan Sahebi Courier\",\n                    \"role\": \"courier\",\n                    \"location\": {\n                        \"lat\": 62.00001,\n                        \"long\": -50.6541,\n                        \"updated_at\": \"2023-08-22T15:09:32.000000Z\"\n                    }\n                }\n            },\n            {\n                \"id\": \"99f3c294-f2c7-4175-9a6b-1e2d032005ae\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": null\n            },\n            {\n                \"id\": \"99f3c4d7-3b43-4bb1-9636-4eab0bedb15e\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": null\n            },\n            {\n                \"id\": \"99f3c558-40cc-4186-958d-6dbd82833f6f\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                },\n                \"courier\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Success Courier",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/orders",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 20:02:03 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 20:02:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"orders\": [\n            {\n                \"id\": \"99f3c294-f2c7-4175-9a6b-1e2d032005ae\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                }\n            },\n            {\n                \"id\": \"99f3c4d7-3b43-4bb1-9636-4eab0bedb15e\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                }\n            },\n            {\n                \"id\": \"99f3c558-40cc-4186-958d-6dbd82833f6f\",\n                \"origin\": {\n                    \"origin_lat\": 56.231,\n                    \"origin_long\": -53.56,\n                    \"origin_address\": \"origin address test\",\n                    \"provider_name\": \"provider name test\",\n                    \"provider_phone_number\": \"+989354679852\"\n                },\n                \"destination\": {\n                    \"destination_lat\": 12.005,\n                    \"destination_long\": -12.00005,\n                    \"destination_address\": \"destination address test\",\n                    \"receiver_name\": \"receiver name test\",\n                    \"receiver_phone_number\": \"+989124679258\"\n                },\n                \"status\": 4,\n                \"corporate\": {\n                    \"id\": 1,\n                    \"name\": \"Sample Company\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/orders/99f3c294-f2c7-4175-9a6b-1e2d032005ae",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"99f3c294-f2c7-4175-9a6b-1e2d032005ae"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/orders/99f3c294-f2c7-4175-9a6b-1e2d032005ae",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"99f3c294-f2c7-4175-9a6b-1e2d032005ae"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 22:47:41 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Aug 2023 22:47:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"order\": {\n            \"id\": \"99f3c294-f2c7-4175-9a6b-1e2d032005ae\",\n            \"origin\": {\n                \"origin_lat\": 56.231,\n                \"origin_long\": -53.56,\n                \"origin_address\": \"origin address test\",\n                \"provider_name\": \"provider name test\",\n                \"provider_phone_number\": \"+989354679852\"\n            },\n            \"destination\": {\n                \"destination_lat\": 12.005,\n                \"destination_long\": -12.00005,\n                \"destination_address\": \"destination address test\",\n                \"receiver_name\": \"receiver name test\",\n                \"receiver_phone_number\": \"+989124679258\"\n            },\n            \"status\": 4,\n            \"corporate\": {\n                \"id\": 1,\n                \"name\": \"Sample Company\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Cancellation",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/orders/2ef8d0c8-88e9-4d01-852f-b795bad8c04f/cancellation",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"2ef8d0c8-88e9-4d01-852f-b795bad8c04f",
+								"cancellation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/orders/2ef8d0c8-88e9-4d01-852f-b795bad8c04f/cancellation",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"2ef8d0c8-88e9-4d01-852f-b795bad8c04f",
+										"cancellation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 01:55:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 01:55:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Status",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": 0,\n    \"lat\": 62.00001,\n    \"long\": -50.65410\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/orders/99f3c4d7-3b43-4bb1-9636-4eab0bedb15e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"99f3c4d7-3b43-4bb1-9636-4eab0bedb15e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Accepted And On The Way To The Origin Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": 1,\n    \"lat\": 62.00001,\n    \"long\": -50.65410\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/orders/99f3c558-40cc-4186-958d-6dbd82833f6f",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"99f3c558-40cc-4186-958d-6dbd82833f6f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 10:50:21 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 10:50:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"order\": {\n            \"id\": \"99f3c558-40cc-4186-958d-6dbd82833f6f\",\n            \"origin\": {\n                \"origin_lat\": 56.231,\n                \"origin_long\": -53.56,\n                \"origin_address\": \"origin address test\",\n                \"provider_name\": \"provider name test\",\n                \"provider_phone_number\": \"+989354679852\"\n            },\n            \"destination\": {\n                \"destination_lat\": 12.005,\n                \"destination_long\": -12.00005,\n                \"destination_address\": \"destination address test\",\n                \"receiver_name\": \"receiver name test\",\n                \"receiver_phone_number\": \"+989124679258\"\n            },\n            \"status\": 1,\n            \"corporate\": {\n                \"id\": 1,\n                \"name\": \"Sample Company\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "On The Way To The Destination Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": 2,\n    \"lat\": 62.00001,\n    \"long\": -50.65410\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/orders/99f3c294-f2c7-4175-9a6b-1e2d032005ae",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"99f3c294-f2c7-4175-9a6b-1e2d032005ae"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:37:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:37:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"order\": {\n            \"id\": \"99f3c294-f2c7-4175-9a6b-1e2d032005ae\",\n            \"origin\": {\n                \"origin_lat\": 56.231,\n                \"origin_long\": -53.56,\n                \"origin_address\": \"origin address test\",\n                \"provider_name\": \"provider name test\",\n                \"provider_phone_number\": \"+989354679852\"\n            },\n            \"destination\": {\n                \"destination_lat\": 12.005,\n                \"destination_long\": -12.00005,\n                \"destination_address\": \"destination address test\",\n                \"receiver_name\": \"receiver name test\",\n                \"receiver_phone_number\": \"+989124679258\"\n            },\n            \"status\": 2,\n            \"corporate\": {\n                \"id\": 1,\n                \"name\": \"Sample Company\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "Done Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": 3,\n    \"lat\": 62.00001,\n    \"long\": -50.65410\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/orders/99f3c294-f2c7-4175-9a6b-1e2d032005ae",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"99f3c294-f2c7-4175-9a6b-1e2d032005ae"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:38:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:38:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"order\": {\n            \"id\": \"99f3c294-f2c7-4175-9a6b-1e2d032005ae\",\n            \"origin\": {\n                \"origin_lat\": 56.231,\n                \"origin_long\": -53.56,\n                \"origin_address\": \"origin address test\",\n                \"provider_name\": \"provider name test\",\n                \"provider_phone_number\": \"+989354679852\"\n            },\n            \"destination\": {\n                \"destination_lat\": 12.005,\n                \"destination_long\": -12.00005,\n                \"destination_address\": \"destination address test\",\n                \"receiver_name\": \"receiver name test\",\n                \"receiver_phone_number\": \"+989124679258\"\n            },\n            \"status\": 3,\n            \"corporate\": {\n                \"id\": 1,\n                \"name\": \"Sample Company\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "Cancel Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": 0,\n    \"lat\": 62.00001,\n    \"long\": -50.65410\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/orders/99f3c4d7-3b43-4bb1-9636-4eab0bedb15e",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"99f3c4d7-3b43-4bb1-9636-4eab0bedb15e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:56:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:56:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"order\": {\n            \"id\": \"99f3c4d7-3b43-4bb1-9636-4eab0bedb15e\",\n            \"origin\": {\n                \"origin_lat\": 56.231,\n                \"origin_long\": -53.56,\n                \"origin_address\": \"origin address test\",\n                \"provider_name\": \"provider name test\",\n                \"provider_phone_number\": \"+989354679852\"\n            },\n            \"destination\": {\n                \"destination_lat\": 12.005,\n                \"destination_long\": -12.00005,\n                \"destination_address\": \"destination address test\",\n                \"receiver_name\": \"receiver name test\",\n                \"receiver_phone_number\": \"+989124679258\"\n            },\n            \"status\": 0,\n            \"corporate\": {\n                \"id\": 1,\n                \"name\": \"Sample Company\"\n            },\n            \"courier\": null\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "employee_phone_number",
+			"value": "09351326358",
+			"type": "string"
+		},
+		{
+			"key": "courier_phone_number",
+			"value": "09853623153",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZWVlYjQzZTQ4NmM1Mjc1MDI0OTNmMDZlY2NkMGFmZDdhNjFhZGNjNDA3MDZhNjQ5OTlmOGNjYjFmZjYzZjFlN2E1OTg3MTAxOTZkNzFhYmMiLCJpYXQiOjE2OTI3OTQzNjcuODEwMTQ2LCJuYmYiOjE2OTI3OTQzNjcuODEwMTUzLCJleHAiOjE3MDg2OTE5NjcuODAzOTEyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.YdjrnDYlY6SkDrk4ZlX6N9SKD30X_2erUIoE-Tsap1HLSng2rTte-vCwVan3JmDkrCOenjRS_jUlsnc5TaL1lHlNoPFvJEQjJOneTfiazh3mU-zZsw-Rdui5Ea6xu2SzdYKoLgG_ef15LVeUmGgU4AkkG0mGvwA0DIc6FGPJVCiECkN7X9TMlIA6yjMt9DpNCjdgnLorWOkhLkbkj34LReT6VX6VkvSkIfLR4J3r-LlKI588OOHswbO7v6a_A4rw9sABMs55Vtq_xTKsiaX4sGQk96gbdbLBvMpMp46z5zJZgkNppsnJZWef2wrC5e-GrOTVgeH5V48P_76yx0tls4ROwv21oz_Gp7zoef4NUcXqn3DRecmwdwRDg6YmW3Is1IDRgUzDPV32kfREeZXSlHolnF81oKszxhrE0qmJvS1sY_U6VFLwStcjtvsnX0iqgGQl3K7HBhklqTPEjgo2pHGJaAik_bYC2qTJw6NHXuXV0I3drnbD_QopSIb28ya5g3HsRxaTCK8dKO5EA6BJ5FS5p6WVQ0PyOESYdjno3ElWiETCV1cHQKJbAD-bL2GwfuycVmK1qkk03XHacI5whjL3sxlAyAs6bTb3Xvvxklih0TO6MImkxk9jwZyJ9QXTOlm4utHFIgz7Yg5Z5KWiHzI7LeZQSXgyvn3BSWTzZX4",
+			"type": "string"
+		}
+	]
+}
