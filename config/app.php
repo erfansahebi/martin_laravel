@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env( 'APP_NAME', 'Laravel' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env( 'APP_ENV', 'production' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env( 'APP_DEBUG', false ),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,9 +55,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env( 'APP_URL', 'http://localhost' ),
 
-    'asset_url' => env('ASSET_URL'),
+    'asset_url' => env( 'ASSET_URL' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -122,7 +122,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env( 'APP_KEY' ),
 
     'cipher' => 'AES-256-CBC',
 
@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'providers' => ServiceProvider::defaultProviders()->merge([
+    'providers' => ServiceProvider::defaultProviders()->merge( [
         /*
          * Package Service Providers...
          */
@@ -165,10 +165,11 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-    ])->toArray(),
+
+        App\Providers\ServicesServiceProvider::class,
+    ] )->toArray(),
 
     /*
     |--------------------------------------------------------------------------
@@ -181,8 +182,11 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
-    ])->toArray(),
+    'aliases' => Facade::defaultAliases()->merge( [
+        'RolePermissionService' => \App\Services\RolePermissionService::class,
+        'AuthService'           => \App\Services\AuthService::class,
+        'UserService'           => \App\Services\UserService::class,
+        'OrderService'          => \App\Services\OrderService::class,
+    ] )->toArray(),
 
 ];

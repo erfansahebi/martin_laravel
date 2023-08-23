@@ -4,8 +4,8 @@ namespace App\Services;
 
 use App\Enums\OrderStatusEnum;
 use App\Exceptions\Order\OrderNotFoundException;
-use App\Exceptions\Order\OrderCanNotBeAcceptException;
-use App\Exceptions\Order\WrongStatusException;
+use App\Exceptions\Order\OrderCanNotBeAcceptedException;
+use App\Exceptions\Order\OrderWrongStatusException;
 use App\Exceptions\User\UserHasWrongRoleException;
 use App\Http\Resources\Order\CorporateOrdersResource;
 use App\Http\Resources\Order\CourierOrdersResource;
@@ -121,7 +121,7 @@ class OrderService
         elseif ( $is_employee )
             throw new OrderNotFoundException();
         elseif ( $status - $order->status != 1 )
-            throw new WrongStatusException();
+            throw new OrderWrongStatusException();
 
         resolve( \UserService::class )->updateLocation( userID: $user->id, lat: $lat, long: $long );
 
@@ -135,7 +135,7 @@ class OrderService
                 $order->status          = $status;
                 break;
             default:
-                throw new WrongStatusException();
+                throw new OrderWrongStatusException();
         }
 
         $order->save();
@@ -148,7 +148,7 @@ class OrderService
         return \DB::transaction( function () use ( $userID, $orderID ) {
             $order = Order::where( 'id', $orderID )->where( 'status', OrderStatusEnum::Pending->value )->lockForUpdate()->first();
             if ( empty( $order ) )
-                throw new OrderCanNotBeAcceptException();
+                throw new OrderCanNotBeAcceptedException();
 
             $order->status          = OrderStatusEnum::AcceptedAndOnTheWayToTheOrigin->value;
             $order->courier_user_id = $userID;
