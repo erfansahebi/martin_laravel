@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'phone_number' => normalize_phone_number( '09351326358' ),
             'password'     => \Hash::make( '123456789' ),
         ] );
-        $employee->Corporates()->sync( Corporate::first() );
+        $employee->corporates()->sync( Corporate::first() );
         $employee->assignRole( Role::EMPLOYEE );
 
         $courier = User::create( [
